@@ -1,0 +1,189 @@
+{
+  "citations": 638,
+  "h_index": 15,
+  "i10_index": 19,
+  "updated": "2026-10-18",
+  "source": "Google Scholar",
+  "articles": [
+    {
+      "title": "Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of experimental studies",
+      "year": "2023",
+      "cited_by": 77
+    },
+    {
+      "title": "Rapid detachment of hydrogen bubbles for electrolytic water splitting driven by combined effects of Marangoni force and the electrostatic repulsion",
+      "year": "2024",
+      "cited_by": 51
+    },
+    {
+      "title": "Evolution of hydrogen bubbles on a microelectrode driven by constant currents and its impact on potential response",
+      "year": "2024",
+      "cited_by": 48
+    },
+    {
+      "title": "Enhancing hydrogen bubble release from a microelectrode through precise tuning of Marangoni forces with nonionic surfactant",
+      "year": "2024",
+      "cited_by": 42
+    },
+    {
+      "title": "Density variation in nanofluids as a function of concentration and temperature",
+      "year": "2021",
+      "cited_by": 38
+    },
+    {
+      "title": "Hydrogen bubble evolution and gas transport mechanism on a microelectrode determined by cathodic potential and temperature",
+      "year": "2024",
+      "cited_by": 35
+    },
+    {
+      "title": "Unveiling micro-and nanoscale bubble dynamics for enhanced electrochemical water splitting",
+      "year": "2025",
+      "cited_by": 34
+    },
+    {
+      "title": "A unique multilayer perceptron model (ANN) for different oxide/EG nanofluid\u2019s viscosity from the experimental study",
+      "year": "2020",
+      "cited_by": 33
+    },
+    {
+      "title": "A comprehensive review of the effects of various factors on the thermal conductivity and rheological characteristics of CNT nanofluids: D. Yadav, M. Sanserwal",
+      "year": "2023",
+      "cited_by": 32
+    },
+    {
+      "title": "Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of numerical studies",
+      "year": "2024",
+      "cited_by": 31
+    },
+    {
+      "title": "Comprehensive study of magnesium based metal matrix composite",
+      "year": "2021",
+      "cited_by": 25
+    },
+    {
+      "title": "How dual hydrogen bubble evolution inhibits electrolytic performance",
+      "year": "2025",
+      "cited_by": 24
+    },
+    {
+      "title": "Rheological characteristics of CeO2, Al2O3 and their hybrid mixture in ethylene glycol base fluid in the wide range of temperature and concentration",
+      "year": "2020",
+      "cited_by": 21
+    },
+    {
+      "title": "The insight flow characteristics of concentrated MWCNT in water base fluid: experimental study and ANN modelling",
+      "year": "2021",
+      "cited_by": 19
+    },
+    {
+      "title": "Numerical analysis of a helical spiral microevaporator-microreformer system for enhanced methanol conversion and hydrogen production",
+      "year": "2025",
+      "cited_by": 16
+    },
+    {
+      "title": "The scope and adaptation strategy for autonomous vehicles from the perspective of Indian smart city",
+      "year": "2023",
+      "cited_by": 14
+    },
+    {
+      "title": "Enhancing the thermal performance of a double pipe heat exchanger in turbulent flow conditions",
+      "year": "2022",
+      "cited_by": 14
+    },
+    {
+      "title": "Combined effects of bubble size ratio on coalescence-driven dynamics and electrode dimensions on electrolytic performance",
+      "year": "2025",
+      "cited_by": 13
+    },
+    {
+      "title": "A comprehensive experimental analysis for optimal flow configurations in a triple tube heat exchanger (TTHXr)",
+      "year": "2022",
+      "cited_by": 12
+    },
+    {
+      "title": "Experimental investigation on rheology property of MWCNT-Al2O3/water hybrid nanofluid",
+      "year": "2018",
+      "cited_by": 9
+    },
+    {
+      "title": "Employing ANN model for prediction of thermal conductivity of CNT nanofluids",
+      "year": "2020",
+      "cited_by": 8
+    },
+    {
+      "title": "Analysis over trio-tube with dual thermal communication surface heat exchanger [TTH Xr.]",
+      "year": "2020",
+      "cited_by": 8
+    },
+    {
+      "title": "Experimental investigation on viscosity of the nanofluids with different parameters",
+      "year": "2017",
+      "cited_by": 8
+    },
+    {
+      "title": "Dual Marangoni-regulated bubble dynamics and potential oscillations during electrocatalytic hydrogen evolution",
+      "year": "2026",
+      "cited_by": 5
+    },
+    {
+      "title": "The current state and potential of canal top solar power plants in India",
+      "year": "2021",
+      "cited_by": 5
+    },
+    {
+      "title": "A systematic multi-criteria framework for selecting hydrogen production methods",
+      "year": "2026",
+      "cited_by": 4
+    },
+    {
+      "title": "Mixing of methanol and water in a micro wavy channel",
+      "year": "2023",
+      "cited_by": 4
+    },
+    {
+      "title": "Scaling Analysis of Nanofluid Flowing Inside a Circular Micro Channel",
+      "year": "2019",
+      "cited_by": 3
+    },
+    {
+      "title": "An Approach of Adaptation of Autonomous Vehicle in the Indian Smart City",
+      "year": "2024",
+      "cited_by": 2
+    },
+    {
+      "title": "Heat pipe fabrication and performance evaluation for different coolants",
+      "year": "2020",
+      "cited_by": 2
+    },
+    {
+      "title": "Design and fabrication of trio tube heat exchanger experimental setup",
+      "year": "2020",
+      "cited_by": 1
+    },
+    {
+      "title": "Impact of mass transport limitations on the performance of plate-type membrane reactors for on-board hydrogen production by methanol steam reforming",
+      "year": "2026",
+      "cited_by": 0
+    },
+    {
+      "title": "Integrated Artificial Intelligence-Based Traffic Light Detection System for Autonomous Vehicle",
+      "year": "2023",
+      "cited_by": 0
+    },
+    {
+      "title": "Investigation of Different Parameters of Serpentine Microchannel on Vapoured Quality and Mixing",
+      "year": "2023",
+      "cited_by": 0
+    },
+    {
+      "title": "Evaluation of Different Slip Mechanisms in Relation to Various Nanofluid Consideration Factors",
+      "year": "2022",
+      "cited_by": 0
+    },
+    {
+      "title": "Comprehensive analysis over dual pass trio tube heat exchanger: An experimental study",
+      "year": "2019",
+      "cited_by": 0
+    }
+  ]
+}
