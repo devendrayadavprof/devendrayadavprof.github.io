@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Devendra Yadav, Postdoctoral Fellow at Technion. Compact membrane reactors for onboard and on-site hydrogen production.">
+<meta property="og:title" content="Devendra Yadav, Ph.D.">
+<meta property="og:description" content="Compact membrane reactors for onboard and on-site hydrogen production.">
+<meta property="og:image" content="images/devendra-yadav-chisa-2026.jpg">
+<title>Devendra Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column with a sticky section bar; hero pairs the intro with the CHISA photo. Palette: membrane steel and hydrogen blue. */
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --ink:#122631; --muted:#55666f; --line:#d9e1e5;
+  --accent:#16708c; --accent-soft:#e2eff3; --chip:#eef2f4;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1a20; --surface:#14232b; --ink:#e3ecef; --muted:#9db0b8; --line:#263a44;
+  --accent:#5fbfdc; --accent-soft:#16323d; --chip:#1a2c35; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1a20; --surface:#14232b; --ink:#e3ecef; --muted:#9db0b8; --line:#263a44;
+  --accent:#5fbfdc; --accent-soft:#16323d; --chip:#1a2c35; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1000px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.2}
+h2{font-size:clamp(1.6rem,3vw,2rem)}
+h3{font-size:1.15rem}
+p{margin:0}
+.label{font:500 .72rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:24px;height:56px}
+nav .brand{font:600 1rem var(--display);color:var(--ink);text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:20px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+nav ul::-webkit-scrollbar{display:none}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.9rem;white-space:nowrap}
+nav ul a:hover{color:var(--ink)}
+@media (max-width:640px){nav .brand{display:none} nav ul{margin:0;gap:18px}}
+
+.hero{padding-block:56px 48px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.01em;margin-top:8px}
+.hero .role{margin-top:8px;font-size:1.05rem;color:var(--muted)}
+.hero .role b{color:var(--ink);font-weight:600}
+.hero .pitch{margin-top:20px;max-width:52ch;font-size:1.1rem}
+.hero figure{margin:0}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:880/719;object-fit:cover;border-radius:8px}
+.hero figcaption{margin-top:8px;font-size:.82rem;color:var(--muted)}
+.actions{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .9rem var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px;padding-block:36px 32px}}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:18px 16px 18px 0}
+.facts div+div{padding-left:16px;border-left:1px solid var(--line)}
+.facts strong{display:block;font:600 1.8rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.facts span{font-size:.85rem;color:var(--muted)}
+@media (max-width:640px){.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+section{padding-block:56px;scroll-margin-top:60px}
+section>.wrap>header{display:flex;flex-direction:column;gap:6px;margin-bottom:28px}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about>*{min-width:0}
+.about p+p{margin-top:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{padding:4px 10px;border-radius:999px;background:var(--chip);font-size:.85rem}
+.about .side>div+div{margin-top:24px}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+
+.fig{margin:0 0 16px}
+.fig-img{background:#ffffff;border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+.fig-img img{display:block;width:100%;min-width:560px;height:auto}
+.fig figcaption{margin-top:12px}
+.fig figcaption p+p{margin-top:6px;color:var(--muted);max-width:72ch}
+.hands{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.hands>div{min-width:0;padding:20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.hands h3{font-size:1.05rem}
+.hands p{margin-top:8px;color:var(--muted);font-size:.95rem}
+.hands .tags{margin-top:12px}
+@media (max-width:640px){.hands{grid-template-columns:1fr}}
+.project{display:grid;grid-template-columns:150px 1fr;gap:24px;padding-block:22px;border-top:1px solid var(--line)}
+.project:first-of-type{border-top:0}
+.project>*{min-width:0}
+.project .when{font:500 .8rem/1.6 var(--mono);color:var(--muted)}
+.project .when em{display:block;font-style:normal;color:var(--accent)}
+.project p.d{margin-top:8px;max-width:68ch}
+.project p.d i{font-style:italic}
+@media (max-width:640px){.project{grid-template-columns:1fr;gap:6px}}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.two>*{min-width:0}
+@media (max-width:760px){.two{grid-template-columns:1fr;gap:48px}}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{padding:14px 0;border-top:1px solid var(--line)}
+.tl .yr{font:500 .8rem var(--mono);color:var(--accent);font-variant-numeric:tabular-nums}
+.tl h3{margin-top:4px;font-size:1.05rem}
+.tl p{color:var(--muted);font-size:.95rem}
+
+ol.pubs{list-style:none;margin:0;padding:0}
+.pub{display:grid;grid-template-columns:56px 1fr;gap:16px;padding-block:16px;border-top:1px solid var(--line)}
+.pub>*{min-width:0}
+.pub .yr{font:500 .85rem var(--mono);color:var(--muted);padding-top:2px}
+.pub a.t{font-weight:600;line-height:1.45;color:var(--ink);text-decoration:none}
+.pub a.t:hover{color:var(--accent);text-decoration:underline}
+.pub .ve{margin-top:4px;font-size:.9rem;color:var(--muted)}
+.pub .ve i{font-style:italic}
+@media (max-width:520px){.pub{grid-template-columns:1fr;gap:2px}}
+.more{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:.95rem}
+
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.cgrid>div{min-width:0}
+.cgrid .v{margin-top:4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;overflow-wrap:anywhere}
+.copy{padding:3px 10px;font-size:.78rem}
+.m-note{margin-top:8px;font-size:.8rem;color:var(--muted)}
+footer{padding-block:28px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Devendra Yadav</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#lab">Hands-on</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="label">Hydrogen energy · Reactor engineering</p>
+        <h1>Devendra Yadav, Ph.D.</h1>
+        <p class="role"><b>Postdoctoral Fellow</b>, Department of Chemical Engineering, Technion – Israel Institute of Technology</p>
+        <p class="pitch">I develop compact membrane reactors for onboard and on-site hydrogen production, from multiphysics modeling to working prototypes.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://scholar.google.co.in/citations?user=gJgesicAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a><a class="btn" href="https://www.linkedin.com/in/devendra-yadav-139028128/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://orcid.org/0000-0002-7120-9288" target="_blank" rel="noopener">ORCID</a><a class="btn" href="https://www.scopus.com/authid/detail.uri?authorId=57202591508" target="_blank" rel="noopener">Scopus</a><a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+      <figure>
+        <img src="images/devendra-yadav-chisa-2026.jpg" alt="Devendra Yadav at the CHISA congress in Prague">
+        <figcaption>Presenting at CHISA 2026, Prague</figcaption>
+      </figure>
+    </div>
+    <div class="facts">
+      <div><strong id="m-journal">21</strong><span>journal articles</span></div>
+      <div><strong id="m-other">14</strong><span>conference papers &amp; book chapters</span></div>
+      <div><strong id="m-reviewed">28</strong><span>journals reviewed for</span></div>
+      <div><strong>4 yrs</strong><span>university teaching</span></div>
+    </div>
+    <p class="m-note" id="m-note" hidden>Publication and review counts update automatically from <a href="https://orcid.org/0000-0002-7120-9288" target="_blank" rel="noopener">ORCID</a>.</p>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <header><p class="label">About</p><h2>About me</h2></header>
+      <div class="about">
+        <div>
+          <p>I build hydrogen reactors, from the first model to the laboratory bench. At Technion I am developing a compact autothermal stacked-plate membrane reactor that converts methanol into pure hydrogen at the point of use, on board a vehicle or on site. I take it through every stage: multiphysics modeling, CAD design, fabrication of the real stack and experimental testing.</p>
+          <p>I came to hydrogen from heat transfer. My M.Tech at IIT (ISM) Dhanbad was an experimental study of nanofluid coolants, for which I built my own measurement setup. My Ph.D. at Xi'an Jiaotong University focused on methanol steam reforming microreactors. I also spent four years as an Assistant Professor of Mechanical Engineering, where I designed and built thermal test rigs with my students.</p>
+        </div>
+        <div class="side">
+          <div>
+            <p class="label">Expertise</p>
+            <div class="tags"><span class="tag">Membrane reactors</span><span class="tag">Microreactors</span><span class="tag">Hydrogen production</span><span class="tag">Heat &amp; mass transfer</span><span class="tag">Prototype design &amp; fabrication</span><span class="tag">Experimental testing</span><span class="tag">Nanofluids &amp; rheology</span><span class="tag">CFD</span><span class="tag">Machine learning</span></div>
+          </div>
+          <div>
+            <p class="label">Tools</p>
+            <div class="tags"><span class="tag">COMSOL Multiphysics</span><span class="tag">ANSYS</span><span class="tag">MATLAB</span><span class="tag">Python</span><span class="tag">Creo</span><span class="tag">LabVIEW</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <header><p class="label">Research</p><h2>Current and past work</h2></header>
+      <figure class="fig">
+        <div class="fig-img"><img src="images/stacked-plate-reactor-concept.png" alt="Concept diagram: distributed methanol, water and air supply feed a compact stacked-plate autothermal membrane reactor; its pure hydrogen drives a PEM fuel cell that supplies electricity for vehicles, ships and stationary power" width="1826" height="720"></div>
+        <figcaption><p class="label">Compact stacked-plate autothermal membrane reactor</p><p>Methanol, water and air go in, and pure hydrogen comes out for a PEM fuel cell. The same reactor can serve on-board power for vehicles and ships, or on-site power for stationary, backup and industrial use.</p></figcaption>
+      </figure>
+      <article class="project">
+        <p class="when"><em>Postdoc</em>2024 – present</p>
+        <div>
+          <h3>Autothermal stacked-plate membrane reactor for onboard hydrogen production</h3>
+          <p class="d">Hydrogen is difficult to store and transport, but methanol is a liquid that today's fuel infrastructure already handles. This reactor turns methanol into fuel-cell-grade hydrogen where it is needed, in a unit compact enough for a vehicle. It heats itself by burning its own off-gas, and a membrane separates pure hydrogen inside the same stack.</p>
+          <p class="d">I design and fabricate the physical stack, including the membrane support, sealing and thermal integration, and test it for pressure integrity, hydrogen permeation and reforming performance. Multiphysics models guide each design decision. My recent paper in the <i>Journal of Industrial and Engineering Chemistry</i> shows how mass transport limits the performance of plate-type membrane reactors.</p>
+        </div>
+      </article>
+      <article class="project">
+        <p class="when"><em>Postdoc</em>2024 – present</p>
+        <div>
+          <h3>Turning engine exhaust heat into hydrogen</h3>
+          <p class="d">A combustion engine loses much of its fuel energy as hot exhaust. This project uses that waste heat to reform methanol into hydrogen-rich gas, which is fed back to the engine to improve its response during transient operation. I build the CFD models used to design the reformer and the heat exchanger.</p>
+        </div>
+      </article>
+      <article class="project">
+        <p class="when"><em>Ph.D.</em>2020 – 2024</p>
+        <div>
+          <h3>Methanol steam reforming microreactors</h3>
+          <p class="d">Microreactors make hydrogen production small, fast and controllable, but the evaporator that feeds them is often the weak link. I developed and modeled a coupled micro-evaporator and micro-reformer, and showed that a helical spiral channel design gives the best methanol conversion and efficiency. The work also produced two review papers in the <i>Journal of Power Sources</i> covering experimental and numerical progress in the field.</p>
+        </div>
+      </article>
+      <article class="project">
+        <p class="when"><em>M.Tech</em>2016 – 2018</p>
+        <div>
+          <h3>Nanofluids as next-generation coolants</h3>
+          <p class="d">Conventional coolants such as water and ethylene glycol limit how much heat a heat exchanger or an electronics cooling system can remove. Adding nanoparticles raises thermal conductivity, but it also raises viscosity and therefore pumping power. My project asked whether that trade-off pays off.</p>
+          <p class="d">I prepared CeO₂, Al₂O₃ and carbon nanotube nanofluids and verified their stability. I built a transient hot-wire setup to measure their thermal conductivity, and measured viscosity and rheology over a wide range of temperatures and concentrations. From these data I trained neural network models that predict viscosity and thermal conductivity, so that a coolant can be evaluated without repeating every experiment.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="wrap">
+      <header><p class="label">Hands-on experience</p><h2>Experimental and prototyping work</h2></header>
+      <div class="hands">
+        <div>
+          <h3>Building a real reactor stack</h3>
+          <p>I took the stacked-plate membrane reactor from CAD model to working hardware, solving membrane support, high-temperature sealing and thermal integration along the way.</p>
+          <div class="tags"><span class="tag">Creo</span><span class="tag">Membrane sealing</span><span class="tag">Thermal integration</span></div>
+        </div>
+        <div>
+          <h3>Testing the stack</h3>
+          <p>I run pressure integrity, hydrogen permeation and methanol reforming experiments to prove the design and to validate the models against real data.</p>
+          <div class="tags"><span class="tag">H₂ permeation</span><span class="tag">Reforming tests</span><span class="tag">Model validation</span></div>
+        </div>
+        <div>
+          <h3>Measuring nanofluid properties</h3>
+          <p>I built a transient hot-wire setup to measure thermal conductivity, and characterized the nanofluids by microscopy, stability analysis and rheometry.</p>
+          <div class="tags"><span class="tag">Transient hot-wire</span><span class="tag">FESEM</span><span class="tag">TEM</span><span class="tag">Zeta potential</span><span class="tag">UV-Vis</span><span class="tag">Anton Paar SVM 3000</span><span class="tag">Bohlin Gemini rheometer</span></div>
+        </div>
+        <div>
+          <h3>Thermal test rigs</h3>
+          <p>With my students, I designed and fabricated a triple tube heat exchanger and a heat pipe for electronics cooling, then measured how flow arrangement, coolant and orientation affect their performance.</p>
+          <div class="tags"><span class="tag">Heat exchangers</span><span class="tag">Heat pipes</span><span class="tag">Electronics cooling</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap two">
+      <div>
+        <header><p class="label">Experience</p><h2>Experience</h2></header>
+        <ol class="tl">
+          <li><p class="yr">2024 – present</p><h3>Postdoctoral Fellow</h3><p>Technion – Israel Institute of Technology, Haifa</p></li>
+          <li><p class="yr">2019 – 2022</p><h3>Assistant Professor</h3><p>Galgotias College of Engineering and Technology, Greater Noida, India</p></li>
+          <li><p class="yr">2018 – 2019</p><h3>Assistant Professor</h3><p>Axis Institute of Technology and Management, Kanpur, India</p></li>
+        </ol>
+      </div>
+      <div>
+        <header><p class="label">Education</p><h2>Education</h2></header>
+        <ol class="tl">
+          <li><p class="yr">2020 – 2024</p><h3>Ph.D., Power Engineering and Engineering Thermophysics</h3><p>Xi'an Jiaotong University, China</p></li>
+          <li><p class="yr">2016 – 2018</p><h3>M.Tech, Mechanical Engineering</h3><p>IIT (ISM) Dhanbad, India</p></li>
+          <li><p class="yr">2011 – 2015</p><h3>B.E., Mechanical Engineering</h3><p>Government Engineering College Raipur, India</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <header><p class="label">Publications</p><h2>Selected publications</h2></header>
+      <ol class="pubs">
+        <li class="pub"><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.1016/j.jiec.2026.05.011" target="_blank" rel="noopener">Impact of mass transport limitations on the performance of plate-type membrane reactors for on-board hydrogen production by methanol steam reforming</a><p class="ve"><i>Journal of Industrial and Engineering Chemistry</i></p></div></li>
+        <li class="pub"><span class="yr">2025</span><div><a class="t" href="https://doi.org/10.1016/j.cep.2024.110149" target="_blank" rel="noopener">Numerical analysis of a helical spiral microevaporator-microreformer system for enhanced methanol conversion and hydrogen production</a><p class="ve"><i>Chemical Engineering and Processing – Process Intensification</i></p></div></li>
+        <li class="pub"><span class="yr">2024</span><div><a class="t" href="https://doi.org/10.1016/j.jpowsour.2024.234090" target="_blank" rel="noopener">Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of numerical studies</a><p class="ve"><i>Journal of Power Sources</i></p></div></li>
+        <li class="pub"><span class="yr">2024</span><div><a class="t" href="https://doi.org/10.1016/j.cej.2024.156890" target="_blank" rel="noopener">Evolution of hydrogen bubbles on a microelectrode driven by constant currents and its impact on potential response</a><p class="ve"><i>Chemical Engineering Journal</i></p></div></li>
+        <li class="pub"><span class="yr">2023</span><div><a class="t" href="https://doi.org/10.1016/j.jpowsour.2023.233621" target="_blank" rel="noopener">Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of experimental studies</a><p class="ve"><i>Journal of Power Sources</i></p></div></li>
+      </ol>
+      <div class="more"><span>Full list:</span><a href="https://scholar.google.co.in/citations?user=gJgesicAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://www.linkedin.com/in/devendra-yadav-139028128/" target="_blank" rel="noopener">LinkedIn</a><a href="https://orcid.org/0000-0002-7120-9288" target="_blank" rel="noopener">ORCID</a><a href="https://www.scopus.com/authid/detail.uri?authorId=57202591508" target="_blank" rel="noopener">Scopus</a></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <header><p class="label">Contact</p><h2>Contact</h2></header>
+      <div class="cgrid">
+        <div><p class="label">Email</p><div class="v"><span>ydevendra393@gmail.com</span><button class="btn copy" data-copy="ydevendra393@gmail.com">Copy</button></div></div>
+        <div><p class="label">Location</p><div class="v"><span>Haifa, Israel</span></div></div>
+        <div><p class="label">Profiles</p><div class="v"><a href="https://scholar.google.co.in/citations?user=gJgesicAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://www.linkedin.com/in/devendra-yadav-139028128/" target="_blank" rel="noopener">LinkedIn</a><a href="https://orcid.org/0000-0002-7120-9288" target="_blank" rel="noopener">ORCID</a><a href="https://www.scopus.com/authid/detail.uri?authorId=57202591508" target="_blank" rel="noopener">Scopus</a></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Devendra Yadav</div></footer>
+
+<script>
+/* ============================================================
+   AUTOMATIC METRICS FROM ORCID
+   The numbers in the four boxes at the top are filled in from
+   your public ORCID record every time someone opens the page.
+   The numbers written in the HTML above (21, 14, 28) are the
+   fallback: they show if ORCID cannot be reached, and the page
+   never shows a lower number than these.
+   ============================================================ */
+const ORCID_ID = "0000-0002-7120-9288";
+(async () => {
+  const api = "https://pub.orcid.org/v3.0/" + ORCID_ID;
+  const get = async path => {
+    const r = await fetch(api + path, { headers: { Accept: "application/json" } });
+    if (!r.ok) throw new Error(path + " " + r.status);
+    return r.json();
+  };
+  const show = (id, n) => {
+    const el = document.getElementById(id);
+    const fallback = parseInt(el.textContent, 10) || 0;
+    if (n > fallback) el.textContent = n;
+    return n > 0;
+  };
+  let any = false;
+  try {
+    const works = await get("/works");
+    let journal = 0, other = 0;
+    for (const g of works.group || []) {
+      const type = (g["work-summary"]?.[0]?.type || "").toLowerCase();
+      if (type === "journal-article") journal++;
+      else if (type === "conference-paper" || type === "book-chapter") other++;
+    }
+    any = show("m-journal", journal) | show("m-other", other) || any;
+  } catch (e) { console.warn("ORCID works:", e); }
+  try {
+    const pr = await get("/peer-reviews");
+    any = show("m-reviewed", (pr.group || []).length) || any;
+  } catch (e) { console.warn("ORCID peer reviews:", e); }
+  if (any) document.getElementById("m-note").hidden = false;
+})();
+
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click", ()=>{
+  const v=b.dataset.copy, reset=t=>{b.textContent=t;setTimeout(()=>b.textContent="Copy",1600)};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);reset("Selected")};
+  try{navigator.clipboard.writeText(v).then(()=>reset("Copied"),fallback)}catch(e){fallback()}
+}));
+</script>
+
+</body>
+</html>
