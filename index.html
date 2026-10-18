@@ -65,12 +65,18 @@ nav ul a:hover{color:var(--ink)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
 @media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px;padding-block:36px 32px}}
 
-.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.facts div{padding:18px 16px 18px 0}
-.facts div+div{padding-left:16px;border-left:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:18px 14px 18px 0;min-width:0}
+.facts div+div{padding-left:14px;border-left:1px solid var(--line)}
 .facts strong{display:block;font:600 1.8rem/1.1 var(--display);font-variant-numeric:tabular-nums}
 .facts span{font-size:.85rem;color:var(--muted)}
-@media (max-width:640px){.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:860px){.facts{grid-template-columns:repeat(3,1fr)}.facts div:nth-child(4){padding-left:0;border-left:0}.facts div:nth-child(n+4){border-top:1px solid var(--line)}}
+@media (max-width:520px){.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(n){padding-left:14px;border-left:1px solid var(--line);border-top:0}.facts div:nth-child(odd){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+.m-note{margin-top:8px;font-size:.8rem;color:var(--muted)}
+.pubtabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.pubtabs button{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font:500 .85rem var(--body);cursor:pointer}
+.pubtabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.pub .cites{font:500 .75rem var(--mono);color:var(--accent);margin-left:8px;white-space:nowrap}
 
 section{padding-block:56px;scroll-margin-top:60px}
 section>.wrap>header{display:flex;flex-direction:column;gap:6px;margin-bottom:28px}
@@ -116,6 +122,7 @@ ol.pubs{list-style:none;margin:0;padding:0}
 .pub{display:grid;grid-template-columns:56px 1fr;gap:16px;padding-block:16px;border-top:1px solid var(--line)}
 .pub>*{min-width:0}
 .pub .yr{font:500 .85rem var(--mono);color:var(--muted);padding-top:2px}
+.pub .t{display:inline}
 .pub a.t{font-weight:600;line-height:1.45;color:var(--ink);text-decoration:none}
 .pub a.t:hover{color:var(--accent);text-decoration:underline}
 .pub .ve{margin-top:4px;font-size:.9rem;color:var(--muted)}
@@ -128,7 +135,6 @@ ol.pubs{list-style:none;margin:0;padding:0}
 .cgrid>div{min-width:0}
 .cgrid .v{margin-top:4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;overflow-wrap:anywhere}
 .copy{padding:3px 10px;font-size:.78rem}
-.m-note{margin-top:8px;font-size:.8rem;color:var(--muted)}
 footer{padding-block:28px;color:var(--muted);font-size:.85rem}
 </style>
 </head>
@@ -167,12 +173,14 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem}
       </figure>
     </div>
     <div class="facts">
-      <div><strong id="m-journal">21</strong><span>journal articles</span></div>
-      <div><strong id="m-other">14</strong><span>conference papers, book chapters &amp; other works</span></div>
-      <div><strong id="m-reviewed">28</strong><span>journals reviewed for</span></div>
-      <div><strong>4 yrs</strong><span>university teaching</span></div>
+      <div><strong id="m-journal">25</strong><span>journal articles</span></div>
+      <div><strong id="m-other">9</strong><span>conference papers, book chapters &amp; other works</span></div>
+      <div><strong id="m-cites">522</strong><span>citations</span></div>
+      <div><strong id="m-h">14</strong><span>h-index</span></div>
+      <div><strong id="m-i10">19</strong><span>i10-index</span></div>
+      <div><strong id="m-reviewed">21</strong><span>journals reviewed for</span></div>
     </div>
-    <p class="m-note" id="m-note" hidden>Publication and review counts update automatically from <a href="https://orcid.org/0000-0002-7120-9288" target="_blank" rel="noopener">ORCID</a>.</p>
+    <p class="m-note" id="m-note" hidden>Updated automatically: publications and reviews from <a href="https://orcid.org/0000-0002-7120-9288" target="_blank" rel="noopener">ORCID</a>, citations from <a id="m-src" href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a><span id="m-date"></span>.</p>
   </div>
 
   <section id="about">
@@ -289,7 +297,11 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem}
   <section id="publications">
     <div class="wrap">
       <header><p class="label">Publications</p><h2>Selected publications</h2></header>
-      <ol class="pubs">
+      <div class="pubtabs" id="pubtabs" role="group" aria-label="Sort publications" hidden>
+        <button type="button" id="tab-recent" data-k="recent" aria-pressed="true">Most recent</button>
+        <button type="button" id="tab-cited" data-k="cited" aria-pressed="false">Most cited</button>
+      </div>
+      <ol class="pubs" id="pubs">
         <li class="pub"><span class="yr">2026</span><div><a class="t" href="https://doi.org/10.1016/j.jiec.2026.05.011" target="_blank" rel="noopener">Impact of mass transport limitations on the performance of plate-type membrane reactors for on-board hydrogen production by methanol steam reforming</a><p class="ve"><i>Journal of Industrial and Engineering Chemistry</i></p></div></li>
         <li class="pub"><span class="yr">2025</span><div><a class="t" href="https://doi.org/10.1016/j.cep.2024.110149" target="_blank" rel="noopener">Numerical analysis of a helical spiral microevaporator-microreformer system for enhanced methanol conversion and hydrogen production</a><p class="ve"><i>Chemical Engineering and Processing – Process Intensification</i></p></div></li>
         <li class="pub"><span class="yr">2024</span><div><a class="t" href="https://doi.org/10.1016/j.jpowsour.2024.234090" target="_blank" rel="noopener">Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of numerical studies</a><p class="ve"><i>Journal of Power Sources</i></p></div></li>
@@ -315,36 +327,133 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem}
 
 <script>
 /* ============================================================
-   AUTOMATIC METRICS FROM ORCID
-   The numbers in the boxes at the top are read from your public
-   ORCID record every time someone opens the page, so they always
-   match ORCID. The numbers written in the HTML above are only
-   shown if ORCID cannot be reached.
+   AUTOMATIC METRICS AND PUBLICATIONS
+   Every time someone opens the page:
+   - your works and peer reviews are read from your public ORCID record
+   - citations, h-index and i10-index come from Google Scholar, via the
+     scholar.json file that the weekly GitHub job updates (see
+     .github/workflows/update-scholar.yml). If that file is missing, they
+     are computed from OpenAlex (openalex.org) instead
+   - the "Selected publications" list shows your latest (or most cited)
+     journal articles from ORCID
+   Everything written in the HTML above is only a fallback, shown if
+   ORCID or OpenAlex cannot be reached.
    ============================================================ */
 const ORCID_ID = "0000-0002-7120-9288";
+const SHOW = 5; // how many publications to list
+
 (async () => {
-  const api = "https://pub.orcid.org/v3.0/" + ORCID_ID;
-  const get = async path => {
-    const r = await fetch(api + path, { headers: { Accept: "application/json" } });
-    if (!r.ok) throw new Error(path + " " + r.status);
-    return r.json();
-  };
-  const set = (id, n) => { document.getElementById(id).textContent = n; };
+  const $ = id => document.getElementById(id);
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  // ORCID titles sometimes contain <inf>/<sup> tags for chemical formulas
+  const fmt = t => esc(t).replace(/&lt;(\/?)(inf|sub)&gt;/gi, "<$1sub>").replace(/&lt;(\/?)sup&gt;/gi, "<$1sup>");
+  const cleanDoi = d => d.toLowerCase().trim().replace(/^https?:\/\/(dx\.)?doi\.org\//, "").replace(/^doi:/, "");
   let any = false;
+
+  let works = [];
   try {
-    const groups = (await get("/works")).group || [];
-    const journal = groups.filter(g => (g["work-summary"]?.[0]?.type || "").toLowerCase() === "journal-article").length;
-    if (groups.length > 0) {
-      set("m-journal", journal);
-      set("m-other", groups.length - journal);
+    const r = await fetch("https://pub.orcid.org/v3.0/" + ORCID_ID + "/works", { headers: { Accept: "application/json" } });
+    if (!r.ok) throw new Error(r.status);
+    for (const g of (await r.json()).group || []) {
+      const w = g["work-summary"]?.[0]; if (!w) continue;
+      const ids = g["external-ids"]?.["external-id"] || [];
+      const d = ids.find(x => x["external-id-type"] === "doi");
+      const pd = w["publication-date"] || {};
+      works.push({
+        type: (w.type || "").toLowerCase(),
+        title: w.title?.title?.value || "",
+        journal: w["journal-title"]?.value || "",
+        year: +(pd.year?.value || 0), month: +(pd.month?.value || 0),
+        doi: d ? cleanDoi(d["external-id-value"]) : ""
+      });
+    }
+    if (works.length) {
+      const journal = works.filter(w => w.type === "journal-article").length;
+      $("m-journal").textContent = journal;
+      $("m-other").textContent = works.length - journal;
       any = true;
     }
   } catch (e) { console.warn("ORCID works:", e); }
+
   try {
-    const n = ((await get("/peer-reviews")).group || []).length;
-    if (n > 0) { set("m-reviewed", n); any = true; }
+    const r = await fetch("https://pub.orcid.org/v3.0/" + ORCID_ID + "/peer-reviews", { headers: { Accept: "application/json" } });
+    const n = ((await r.json()).group || []).length;
+    if (n > 0) { $("m-reviewed").textContent = n; any = true; }
   } catch (e) { console.warn("ORCID peer reviews:", e); }
-  if (any) document.getElementById("m-note").hidden = false;
+
+  // Google Scholar metrics, saved weekly by the GitHub job into scholar.json
+  let scholar = null;
+  try {
+    const r = await fetch("scholar.json", { cache: "no-store" });
+    if (r.ok) { const j = await r.json(); if (j && j.citations != null) scholar = j; }
+  } catch (e) { /* no scholar.json yet */ }
+  const normTitle = t => String(t).toLowerCase().replace(/<[^>]+>/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+  const scholarCites = {};
+  for (const a of scholar?.articles || []) scholarCites[normTitle(a.title)] = a.cited_by;
+
+  // Per-paper citations from OpenAlex, matched by DOI (fallback when Scholar has no match)
+  const cites = {};
+  const dois = [...new Set(works.map(w => w.doi).filter(Boolean))];
+  try {
+    for (let i = 0; i < dois.length; i += 50) {
+      const batch = dois.slice(i, i + 50).map(encodeURIComponent).join("|");
+      const r = await fetch("https://api.openalex.org/works?per-page=50&select=doi,cited_by_count&filter=doi:" + batch);
+      if (!r.ok) throw new Error(r.status);
+      for (const x of (await r.json()).results || []) if (x.doi) cites[cleanDoi(x.doi)] = x.cited_by_count || 0;
+    }
+    const c = Object.values(cites).sort((a, b) => b - a);
+    if (!scholar && c.length) {
+      $("m-cites").textContent = c.reduce((a, b) => a + b, 0).toLocaleString("en-US");
+      $("m-h").textContent = c.filter((x, i) => x >= i + 1).length;
+      $("m-i10").textContent = c.filter(x => x >= 10).length;
+      any = true;
+    }
+  } catch (e) { console.warn("OpenAlex:", e); }
+
+  const longDate = d => d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  if (scholar) {
+    $("m-cites").textContent = Number(scholar.citations).toLocaleString("en-US");
+    if (scholar.h_index != null) $("m-h").textContent = scholar.h_index;
+    if (scholar.i10_index != null) $("m-i10").textContent = scholar.i10_index;
+    $("m-src").textContent = "Google Scholar";
+    $("m-src").href = "https://scholar.google.com/citations?user=gJgesicAAAAJ&hl=en";
+    any = true;
+  }
+  if (any) {
+    const upd = scholar?.updated ? new Date(scholar.updated + "T12:00:00") : new Date();
+    $("m-date").textContent = " (citations as of " + longDate(upd) + ")";
+    $("m-note").hidden = false;
+  }
+  // per-paper count: Google Scholar by title when available, otherwise OpenAlex by DOI
+  const citeOf = w => { const s = scholarCites[normTitle(w.title)]; return s != null ? s : cites[w.doi]; };
+
+  // Selected publications
+  const journals = works.filter(w => w.type === "journal-article" && w.title);
+  if (!journals.length) return;
+  const hasCites = Object.keys(cites).length > 0 || Object.keys(scholarCites).length > 0;
+  let mode = "recent";
+  const render = () => {
+    const list = journals.slice().sort(mode === "cited"
+      ? (a, b) => (citeOf(b) || 0) - (citeOf(a) || 0)
+      : (a, b) => (b.year - a.year) || (b.month - a.month)).slice(0, SHOW);
+    $("pubs").innerHTML = list.map(w => {
+      const href = w.doi ? "https://doi.org/" + esc(w.doi) : "";
+      const t = fmt(w.title);
+      const n = citeOf(w);
+      return `<li class="pub"><span class="yr">${w.year || ""}</span><div>` +
+        (href ? `<a class="t" href="${href}" target="_blank" rel="noopener">${t}</a>` : `<span class="t">${t}</span>`) +
+        `<p class="ve"><i>${esc(w.journal)}</i>${hasCites && n != null ? `<span class="cites">${n} citation${n === 1 ? "" : "s"}</span>` : ""}</p></div></li>`;
+    }).join("");
+    for (const b of document.querySelectorAll("#pubtabs button")) b.setAttribute("aria-pressed", b.dataset.k === mode);
+  };
+  if (hasCites) {
+    $("pubtabs").hidden = false;
+    $("pubtabs").addEventListener("click", e => {
+      const b = e.target.closest("button[data-k]"); if (!b) return;
+      mode = b.dataset.k; render();
+    });
+  }
+  render();
 })();
 
 document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click", ()=>{

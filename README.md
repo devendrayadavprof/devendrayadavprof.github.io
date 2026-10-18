@@ -34,22 +34,24 @@ This folder is the complete website. It runs on GitHub Pages, which is free.
   always go back to an earlier version.
 - **Take the site down:** in **Settings → Pages**, unpublish it, or delete the repository.
 
-## Automatic paper and review counts
+## What updates automatically
 
-The numbers in the boxes near the top (journal articles, conference papers and book chapters,
-journals reviewed for) are read from your public ORCID record each time someone opens the page.
+Every time someone opens the site, it reads fresh data:
 
-- The boxes always show ORCID's numbers, so they add up to your ORCID total. The numbers
-  written in `index.html` (21, 14, 28) appear only if ORCID cannot be reached.
-- "Journal articles" counts ORCID works whose type is Journal article. Every other work type
-  goes in the second box. To move an item, change its work type in ORCID.
-- To keep ORCID complete without typing anything:
-  - **Papers:** in ORCID, go to **Works → Add → Search & link → Scopus to ORCID** and authorize it.
-    New Scopus papers then reach ORCID automatically.
-  - **Reviews:** in your Web of Science reviewer profile, turn on sending reviews to ORCID.
-    ORCID then lists the journals you review for.
-- A small note under the boxes ("counts update automatically from ORCID") appears only when the
-  live numbers have loaded.
+| On the site | Comes from |
+|---|---|
+| Journal articles, other works | Your public ORCID record (work type decides the box) |
+| Journals reviewed for | ORCID peer reviews (send them from Web of Science) |
+| Citations, h-index, i10-index | Google Scholar, saved every Monday into `scholar.json` by the GitHub job in `.github/workflows/update-scholar.yml` (uses your `SERPAPI_KEY` secret). If `scholar.json` is missing, OpenAlex is used instead |
+| Selected publications | Your 5 latest ORCID journal articles, with a "Most cited" tab |
+
+Notes:
+- The numbers written in `index.html` are only shown if ORCID or OpenAlex cannot be reached.
+- Citation numbers from OpenAlex are usually a little lower than Google Scholar, because Google
+  Scholar also counts theses, preprints and other sources.
+- To change how many publications are listed, edit `const SHOW = 5;` near the bottom of `index.html`.
+- To keep everything correct, keep ORCID up to date: link Scopus to ORCID for papers, and send
+  reviews from Web of Science. Make sure each paper in ORCID has the right work type and a DOI.
 
 ## Optional: your own domain
 
