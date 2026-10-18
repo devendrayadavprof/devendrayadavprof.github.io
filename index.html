@@ -168,7 +168,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem}
     </div>
     <div class="facts">
       <div><strong id="m-journal">21</strong><span>journal articles</span></div>
-      <div><strong id="m-other">14</strong><span>conference papers &amp; book chapters</span></div>
+      <div><strong id="m-other">14</strong><span>conference papers, book chapters &amp; other works</span></div>
       <div><strong id="m-reviewed">28</strong><span>journals reviewed for</span></div>
       <div><strong>4 yrs</strong><span>university teaching</span></div>
     </div>
@@ -316,11 +316,10 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem}
 <script>
 /* ============================================================
    AUTOMATIC METRICS FROM ORCID
-   The numbers in the four boxes at the top are filled in from
-   your public ORCID record every time someone opens the page.
-   The numbers written in the HTML above (21, 14, 28) are the
-   fallback: they show if ORCID cannot be reached, and the page
-   never shows a lower number than these.
+   The numbers in the boxes at the top are read from your public
+   ORCID record every time someone opens the page, so they always
+   match ORCID. The numbers written in the HTML above are only
+   shown if ORCID cannot be reached.
    ============================================================ */
 const ORCID_ID = "0000-0002-7120-9288";
 (async () => {
@@ -330,26 +329,20 @@ const ORCID_ID = "0000-0002-7120-9288";
     if (!r.ok) throw new Error(path + " " + r.status);
     return r.json();
   };
-  const show = (id, n) => {
-    const el = document.getElementById(id);
-    const fallback = parseInt(el.textContent, 10) || 0;
-    if (n > fallback) el.textContent = n;
-    return n > 0;
-  };
+  const set = (id, n) => { document.getElementById(id).textContent = n; };
   let any = false;
   try {
-    const works = await get("/works");
-    let journal = 0, other = 0;
-    for (const g of works.group || []) {
-      const type = (g["work-summary"]?.[0]?.type || "").toLowerCase();
-      if (type === "journal-article") journal++;
-      else if (type === "conference-paper" || type === "book-chapter") other++;
+    const groups = (await get("/works")).group || [];
+    const journal = groups.filter(g => (g["work-summary"]?.[0]?.type || "").toLowerCase() === "journal-article").length;
+    if (groups.length > 0) {
+      set("m-journal", journal);
+      set("m-other", groups.length - journal);
+      any = true;
     }
-    any = show("m-journal", journal) | show("m-other", other) || any;
   } catch (e) { console.warn("ORCID works:", e); }
   try {
-    const pr = await get("/peer-reviews");
-    any = show("m-reviewed", (pr.group || []).length) || any;
+    const n = ((await get("/peer-reviews")).group || []).length;
+    if (n > 0) { set("m-reviewed", n); any = true; }
   } catch (e) { console.warn("ORCID peer reviews:", e); }
   if (any) document.getElementById("m-note").hidden = false;
 })();

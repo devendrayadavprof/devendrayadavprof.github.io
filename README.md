@@ -39,9 +39,10 @@ This folder is the complete website. It runs on GitHub Pages, which is free.
 The numbers in the boxes near the top (journal articles, conference papers and book chapters,
 journals reviewed for) are read from your public ORCID record each time someone opens the page.
 
-- The numbers written in `index.html` (21, 14, 28) are the fallback. They show if ORCID is
-  unreachable, and the page never shows a number lower than these. If you ever want a smaller
-  number, edit the fallback.
+- The boxes always show ORCID's numbers, so they add up to your ORCID total. The numbers
+  written in `index.html` (21, 14, 28) appear only if ORCID cannot be reached.
+- "Journal articles" counts ORCID works whose type is Journal article. Every other work type
+  goes in the second box. To move an item, change its work type in ORCID.
 - To keep ORCID complete without typing anything:
   - **Papers:** in ORCID, go to **Works → Add → Search & link → Scopus to ORCID** and authorize it.
     New Scopus papers then reach ORCID automatically.
