@@ -1,8 +1,8 @@
 {
-  "citations": 638,
+  "citations": 639,
   "h_index": 15,
   "i10_index": 19,
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "source": "Google Scholar",
   "articles": [
     {
@@ -83,7 +83,7 @@
     {
       "title": "The scope and adaptation strategy for autonomous vehicles from the perspective of Indian smart city",
       "year": "2023",
-      "cited_by": 14
+      "cited_by": 15
     },
     {
       "title": "Enhancing the thermal performance of a double pipe heat exchanger in turbulent flow conditions",
