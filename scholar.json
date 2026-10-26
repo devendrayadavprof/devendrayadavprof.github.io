@@ -1,8 +1,8 @@
 {
-  "citations": 639,
+  "citations": 644,
   "h_index": 15,
   "i10_index": 19,
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "source": "Google Scholar",
   "articles": [
     {
@@ -18,7 +18,7 @@
     {
       "title": "Evolution of hydrogen bubbles on a microelectrode driven by constant currents and its impact on potential response",
       "year": "2024",
-      "cited_by": 48
+      "cited_by": 49
     },
     {
       "title": "Enhancing hydrogen bubble release from a microelectrode through precise tuning of Marangoni forces with nonionic surfactant",
@@ -28,17 +28,17 @@
     {
       "title": "Density variation in nanofluids as a function of concentration and temperature",
       "year": "2021",
-      "cited_by": 38
+      "cited_by": 39
     },
     {
       "title": "Hydrogen bubble evolution and gas transport mechanism on a microelectrode determined by cathodic potential and temperature",
       "year": "2024",
-      "cited_by": 35
+      "cited_by": 36
     },
     {
       "title": "Unveiling micro-and nanoscale bubble dynamics for enhanced electrochemical water splitting",
       "year": "2025",
-      "cited_by": 34
+      "cited_by": 35
     },
     {
       "title": "A unique multilayer perceptron model (ANN) for different oxide/EG nanofluid\u2019s viscosity from the experimental study",
@@ -46,14 +46,14 @@
       "cited_by": 33
     },
     {
-      "title": "A comprehensive review of the effects of various factors on the thermal conductivity and rheological characteristics of CNT nanofluids: D. Yadav, M. Sanserwal",
-      "year": "2023",
+      "title": "Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of numerical studies",
+      "year": "2024",
       "cited_by": 32
     },
     {
-      "title": "Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of numerical studies",
-      "year": "2024",
-      "cited_by": 31
+      "title": "A comprehensive review of the effects of various factors on the thermal conductivity and rheological characteristics of CNT nanofluids: D. Yadav, M. Sanserwal",
+      "year": "2023",
+      "cited_by": 32
     },
     {
       "title": "Comprehensive study of magnesium based metal matrix composite",
