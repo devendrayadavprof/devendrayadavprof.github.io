@@ -1,8 +1,8 @@
 {
-  "citations": 644,
+  "citations": 648,
   "h_index": 15,
   "i10_index": 19,
-  "updated": "2026-10-26",
+  "updated": "2026-11-02",
   "source": "Google Scholar",
   "articles": [
     {
@@ -18,7 +18,7 @@
     {
       "title": "Evolution of hydrogen bubbles on a microelectrode driven by constant currents and its impact on potential response",
       "year": "2024",
-      "cited_by": 49
+      "cited_by": 50
     },
     {
       "title": "Enhancing hydrogen bubble release from a microelectrode through precise tuning of Marangoni forces with nonionic surfactant",
@@ -56,14 +56,14 @@
       "cited_by": 32
     },
     {
-      "title": "Comprehensive study of magnesium based metal matrix composite",
-      "year": "2021",
+      "title": "How dual hydrogen bubble evolution inhibits electrolytic performance",
+      "year": "2025",
       "cited_by": 25
     },
     {
-      "title": "How dual hydrogen bubble evolution inhibits electrolytic performance",
-      "year": "2025",
-      "cited_by": 24
+      "title": "Comprehensive study of magnesium based metal matrix composite",
+      "year": "2021",
+      "cited_by": 25
     },
     {
       "title": "Rheological characteristics of CeO2, Al2O3 and their hybrid mixture in ethylene glycol base fluid in the wide range of temperature and concentration",
@@ -86,14 +86,14 @@
       "cited_by": 15
     },
     {
-      "title": "Enhancing the thermal performance of a double pipe heat exchanger in turbulent flow conditions",
-      "year": "2022",
+      "title": "Combined effects of bubble size ratio on coalescence-driven dynamics and electrode dimensions on electrolytic performance",
+      "year": "2025",
       "cited_by": 14
     },
     {
-      "title": "Combined effects of bubble size ratio on coalescence-driven dynamics and electrode dimensions on electrolytic performance",
-      "year": "2025",
-      "cited_by": 13
+      "title": "Enhancing the thermal performance of a double pipe heat exchanger in turbulent flow conditions",
+      "year": "2022",
+      "cited_by": 14
     },
     {
       "title": "A comprehensive experimental analysis for optimal flow configurations in a triple tube heat exchanger (TTHXr)",
@@ -123,7 +123,7 @@
     {
       "title": "Dual Marangoni-regulated bubble dynamics and potential oscillations during electrocatalytic hydrogen evolution",
       "year": "2026",
-      "cited_by": 5
+      "cited_by": 6
     },
     {
       "title": "The current state and potential of canal top solar power plants in India",
